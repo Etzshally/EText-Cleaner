@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}Analyze{% endblock %}
+
+
+{% block body %}
+<div style="width: 80%; position: relative; top: 120px; display: block; margin: auto;">
+<form action="/result" method="POST">
+    <div class="form-floating">
+    <textarea class="form-control" style="height: 174px !important;" placeholder="" id="text" name="text"></textarea>
+    <label for="floatingTextarea">Enter your text to be analyzed by EText!</label>
+</div>
+
+
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox"  name="punc" id="sw-1">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+</div>
+<div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox"  name="capitalize" id="sw-2">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Capitalize</label>
+</div>
+<div class="form-check form-switch mb-3">
+    <input class="form-check-input" type="checkbox"  name="lines" id="sw-3">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Remove Extra Lines</label>
+</div>
+
+
+<button type="submit" name="submit-button" class="btn btn-warning  mb-3">EText-lyze</button>
+</form>
+</div>
+{% endblock %}
